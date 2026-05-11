@@ -737,6 +737,16 @@ img{ display:block; width:100%; height:auto }
 .next-proj a{ color:var(--color-ink) }
 .next-proj a:hover{ color:var(--color-accent) }
 
+@media (max-width:640px){
+  .next-proj{
+    flex-direction:column;
+    align-items:stretch;
+    gap:var(--s-3);
+    text-align:center;
+  }
+  .next-proj a{ display:block }
+}
+
 .back-link{
   display:inline-block;
   font-size:var(--fs-tiny);
