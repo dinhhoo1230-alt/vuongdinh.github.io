@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hồ Tất Vương Đình — Portfolio 2026</title>
+<meta name="description" content="Portfolio kiến trúc — Hồ Tất Vương Đình.">
+<meta name="theme-color" content="#ef6c00">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/reset.css?v=5">
+<link rel="stylesheet" href="css/style.css?v=5">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23fff'/%3E%3Crect x='30' y='30' width='40' height='40' fill='%23ef6c00'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="container">
+    <nav class="nav" id="mainNav">
+      <ul class="nav__list">
+        <li><a href="#home" class="nav__link" data-tab="home">Trang chủ</a></li>
+        <li><a href="#about" class="nav__link" data-tab="about">Giới thiệu</a></li>
+        <li><a href="#timeline" class="nav__link" data-tab="timeline">Hành trình</a></li>
+        <li><a href="#projects" class="nav__link" data-tab="projects">Dự án</a></li>
+        <li><a href="#contact" class="nav__link" data-tab="contact">Liên hệ</a></li>
+      </ul>
+      <button class="nav__toggle" id="navToggle" aria-label="Mở menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ========== TAB 1 — TRANG CHỦ (Cover) ========== -->
+  <section class="panel is-active" id="home">
+    <div class="container">
+      <div class="cover">
+        <p class="cover__label">Portfolio</p>
+        <p class="cover__name">Hồ Tất Vương Đình</p>
+        <p class="cover__year">2020 — 2026</p>
+        <a href="#about" class="cover__arrow" data-tab="about" aria-label="Sang trang Giới thiệu">
+          <svg viewBox="0 0 48 48" width="48" height="48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter">
+            <line x1="8" y1="24" x2="40" y2="24"/>
+            <polyline points="30,14 40,24 30,34"/>
+          </svg>
+        </a>
+      </div>
+      <p class="page-num">01</p>
+    </div>
+  </section>
+
+  <!-- ========== TAB 2 — GIỚI THIỆU (CV) ========== -->
+  <section class="panel" id="about">
+    <div class="container">
+      <div class="cv">
+        <div class="cv__photo">
+          <img src="avatar.jpg" alt="Chân dung Hồ Tất Vương Đình">
+        </div>
+
+        <div class="cv__info">
+          <div class="info-block">
+            <span class="info-block__label">Họ Tên</span>
+            <div class="info-block__value">
+              <p>Hồ Tất Vương Đình</p>
+              <p style="color:var(--color-ink-soft); font-size:var(--fs-small)">Sinh năm 2000</p>
+            </div>
+          </div>
+
+          <div class="info-block">
+            <span class="info-block__label">Liên hệ</span>
+            <div class="info-block__value">
+              <p>dinhhoo1230@gmail.com</p>
+              <p>+84 000 000 000</p>
+            </div>
+          </div>
+
+          <div class="info-block">
+            <span class="info-block__label">Chuyên ngành</span>
+            <div class="info-block__value">
+              <p>Kiến trúc</p>
+              <p style="color:var(--color-ink-soft); font-size:var(--fs-small)">Trường Đại học Kiến trúc TP. HCM</p>
+            </div>
+          </div>
+
+          <div class="info-block">
+            <span class="info-block__label">Kỹ năng cứng</span>
+            <div class="info-block__value">
+              <p>SketchUp · AutoCAD</p>
+              <p>Adobe Photoshop · InDesign</p>
+              <p>Lumion · V-Ray</p>
+              <p>Revit</p>
+            </div>
+          </div>
+
+          <div class="info-block">
+            <span class="info-block__label">Kỹ năng mềm</span>
+            <div class="info-block__value">
+              <p>Tư duy thiết kế · trình bày phương án</p>
+              <p>Làm việc nhóm · giao tiếp khách hàng</p>
+              <p>Tiếng Anh giao tiếp (B2)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="page-num">02</p>
+    </div>
+  </section>
+
+  <!-- ========== TAB 3 — HÀNH TRÌNH (Timeline) ========== -->
+  <section class="panel" id="timeline">
+    <div class="container">
+      <ol class="timeline">
+
+        <li class="tl-item">
+          <div class="tl-item__year">2018 — 2022</div>
+          <div class="tl-item__dot"></div>
+          <div class="tl-item__body">
+            <p class="tl-item__label">Đại học</p>
+            <div class="tl-item__desc">
+              <p>Cử nhân Kiến trúc</p>
+              <p>Đồ án tốt nghiệp đạt loại Giỏi cấp khoa, 2022</p>
+            </div>
+          </div>
+        </li>
+
+        <li class="tl-item">
+          <div class="tl-item__year">2022</div>
+          <div class="tl-item__dot"></div>
+          <div class="tl-item__body">
+            <p class="tl-item__label">Thực tập</p>
+            <div class="tl-item__desc">
+              <p>Thực tập tại văn phòng thiết kế Mộc Studio</p>
+              <p>Hỗ trợ 5 dự án nhà phố và biệt thự</p>
+            </div>
+          </div>
+        </li>
+
+        <li class="tl-item">
+          <div class="tl-item__year">2022 — 2023</div>
+          <div class="tl-item__dot"></div>
+          <div class="tl-item__body">
+            <p class="tl-item__label">Làm việc</p>
+            <div class="tl-item__desc">
+              <p>Kiến trúc sư tại Tropical Space — Hồ Chí Minh</p>
+              <p>Tham gia 10 dự án nhà ở dân dụng</p>
+            </div>
+          </div>
+        </li>
+
+        <li class="tl-item">
+          <div class="tl-item__year">2023 — Nay</div>
+          <div class="tl-item__dot"></div>
+          <div class="tl-item__body">
+            <p class="tl-item__label">Công việc ngoài</p>
+            <div class="tl-item__desc">
+              <p>Nhận thiết kế nội thất nhà phố tự do</p>
+              <p>Vẽ phối cảnh · trình bày bản đồng án</p>
+              <p>Phối hợp thi công cùng nhà thầu</p>
+            </div>
+          </div>
+        </li>
+
+      </ol>
+      <p class="page-num">03</p>
+    </div>
+  </section>
+
+  <!-- ========== TAB 4 — DỰ ÁN ========== -->
+  <section class="panel" id="projects">
+    <div class="container">
+      <div class="projects-grid">
+
+        <a href="projects/project-01.html" class="proj-card">
+          <div class="proj-card__media">
+            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=85" alt="Nhà Anh Hạnh">
+          </div>
+          <div class="proj-card__caption">
+            <span class="proj-card__num">01</span>
+            <div class="proj-card__info">
+              <p class="proj-card__title">Nhà Anh Hạnh</p>
+              <p class="proj-card__meta">4.5 × 12.6 m · Hoàn thành 06/2023</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="projects/project-02.html" class="proj-card">
+          <div class="proj-card__media">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=85" alt="Nhà TL15">
+          </div>
+          <div class="proj-card__caption">
+            <span class="proj-card__num">02</span>
+            <div class="proj-card__info">
+              <p class="proj-card__title">Nhà TL15</p>
+              <p class="proj-card__meta">5 × 18 m · Hoàn thành 03/2023</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="projects/project-03.html" class="proj-card">
+          <div class="proj-card__media">
+            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&q=85" alt="Nhà Anh Dũng">
+          </div>
+          <div class="proj-card__caption">
+            <span class="proj-card__num">03</span>
+            <div class="proj-card__info">
+              <p class="proj-card__title">Nhà Anh Dũng</p>
+              <p class="proj-card__meta">4 × 16 m · Hoàn thành 09/2023</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="projects/project-04.html" class="proj-card">
+          <div class="proj-card__media">
+            <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&q=85" alt="Nhà Anh Khương">
+          </div>
+          <div class="proj-card__caption">
+            <span class="proj-card__num">04</span>
+            <div class="proj-card__info">
+              <p class="proj-card__title">Nhà Anh Khương</p>
+              <p class="proj-card__meta">6 × 20 m · Hoàn thành 04/2024</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="projects/project-05.html" class="proj-card">
+          <div class="proj-card__media">
+            <img src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=600&q=85" alt="Nhà Anh Hoài">
+          </div>
+          <div class="proj-card__caption">
+            <span class="proj-card__num">05</span>
+            <div class="proj-card__info">
+              <p class="proj-card__title">Nhà Anh Hoài</p>
+              <p class="proj-card__meta">5.2 × 15 m · Hoàn thành 11/2024</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="projects/project-06.html" class="proj-card">
+          <div class="proj-card__media">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=85" alt="Nhà Sinh hoạt cộng đồng">
+          </div>
+          <div class="proj-card__caption">
+            <span class="proj-card__num">06</span>
+            <div class="proj-card__info">
+              <p class="proj-card__title">Nhà sinh hoạt</p>
+              <p class="proj-card__meta">320 m² · Hoàn thành 2022</p>
+            </div>
+          </div>
+        </a>
+
+      </div>
+      <p class="page-num">04</p>
+    </div>
+  </section>
+
+  <!-- ========== TAB 5 — LIÊN HỆ ========== -->
+  <section class="panel" id="contact">
+    <div class="container">
+      <div class="contact">
+        <p class="contact__label">Liên hệ</p>
+        <ul class="contact__list">
+          <li><span class="label">Email</span> <a href="mailto:dinhhoo1230@gmail.com">dinhhoo1230@gmail.com</a></li>
+          <li><span class="label">Điện thoại</span> +84 000 000 000</li>
+          <li><span class="label">Behance</span> <a href="#" target="_blank" rel="noopener">behance.net/vuongdinh</a></li>
+          <li><span class="label">Instagram</span> <a href="#" target="_blank" rel="noopener">@vuongdinh.kts</a></li>
+        </ul>
+
+        <div class="contact__cv">
+          <a href="assets/cv.pdf" class="btn-text" download>Tải CV (PDF) ↓</a>
+        </div>
+      </div>
+      <p class="page-num">05</p>
+    </div>
+  </section>
+
+</main>
+
+<div class="curtain" id="curtain" aria-hidden="true"></div>
+
+<script src="js/main.js?v=4" defer></script>
+</body>
+</html>

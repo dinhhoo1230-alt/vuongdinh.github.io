@@ -1,0 +1,241 @@
+/* ============================================================
+   Project Detail Page
+   ============================================================ */
+
+.back-link{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size:var(--fs-small);
+  letter-spacing:0.04em;
+  margin-top:var(--s-3);
+  position:relative;
+  padding:4px 0;
+}
+
+.back-link::after{
+  content:'';
+  position:absolute;
+  bottom:0; left:0;
+  width:0; height:1px;
+  background:var(--color-accent);
+  transition:width var(--transition);
+}
+.back-link:hover{color:var(--color-accent)}
+.back-link:hover::after{width:100%}
+
+/* Hero ảnh full-bleed */
+.proj-hero{
+  margin-top:96px;
+  padding-bottom:var(--s-7);
+}
+
+.proj-hero__media{
+  width:100%;
+  aspect-ratio:21/9;
+  overflow:hidden;
+  background:var(--color-bg-soft);
+}
+
+.proj-hero__media img{
+  width:100%; height:100%; object-fit:cover;
+}
+
+@media (max-width:768px){
+  .proj-hero__media{aspect-ratio:4/3}
+  .proj-hero{margin-top:80px}
+}
+
+/* Meta block 4 cột */
+.proj-meta{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:var(--s-5);
+  padding:var(--s-7) 0;
+  border-top:1px solid var(--color-line);
+  border-bottom:1px solid var(--color-line);
+}
+
+.proj-meta__cell .caption{
+  display:block;
+  margin-bottom:var(--s-1);
+  color:var(--color-accent);
+}
+
+.proj-meta__value{
+  font-family:var(--ff-serif);
+  font-size:1.25rem;
+  font-weight:400;
+  line-height:1.3;
+}
+
+@media (max-width:768px){
+  .proj-meta{grid-template-columns:1fr 1fr; gap:var(--s-3)}
+  .proj-meta__value{font-size:1.0625rem}
+}
+
+@media (max-width:480px){
+  .proj-meta{grid-template-columns:1fr; gap:var(--s-2)}
+}
+
+/* Tiêu đề + concept */
+.proj-intro{
+  display:grid;
+  grid-template-columns:7fr 5fr;
+  gap:var(--s-8);
+  align-items:start;
+  padding:var(--s-9) 0;
+}
+
+.proj-intro__title{
+  font-size:var(--fs-display);
+  font-weight:300;
+  line-height:0.95;
+  letter-spacing:-0.03em;
+}
+
+.proj-intro__title em{font-style:italic; color:var(--color-accent); font-weight:300}
+
+.proj-intro__num{
+  font-family:var(--ff-sans);
+  font-size:var(--fs-caption);
+  font-weight:500;
+  letter-spacing:0.12em;
+  color:var(--color-accent);
+  margin-bottom:var(--s-3);
+  text-transform:uppercase;
+}
+
+.proj-intro__body p{
+  margin-bottom:var(--s-3);
+  color:var(--color-ink);
+}
+
+@media (max-width:1024px){
+  .proj-intro{grid-template-columns:1fr; gap:var(--s-4); padding:var(--s-7) 0}
+}
+
+/* Gallery — nhiều layout xen kẽ */
+.gallery{
+  display:flex;
+  flex-direction:column;
+  gap:var(--s-7);
+  padding-bottom:var(--s-9);
+}
+
+.fig{
+  margin:0;
+}
+
+.fig img{width:100%; height:auto; display:block; background:var(--color-bg-soft)}
+
+.fig figcaption{
+  margin-top:var(--s-2);
+  font-size:var(--fs-caption);
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--color-ink-soft);
+}
+
+.fig--full{ /* full bleed within container */ }
+
+.fig--split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:var(--s-3);
+}
+.fig--split img{aspect-ratio:4/5; object-fit:cover}
+
+.fig--narrow{
+  max-width:880px;
+  margin:0 auto;
+}
+
+@media (max-width:640px){
+  .fig--split{grid-template-columns:1fr}
+}
+
+/* Bản vẽ kỹ thuật */
+.drawings{
+  background:var(--color-bg-soft);
+  padding:var(--section-pad) 0;
+}
+
+.drawings__head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  margin-bottom:var(--s-7);
+  flex-wrap:wrap;
+  gap:var(--s-3);
+}
+
+.drawings__grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:var(--s-5);
+}
+
+@media (max-width:768px){
+  .drawings__grid{grid-template-columns:1fr}
+}
+
+/* Next project */
+.next-project{
+  border-top:1px solid var(--color-line);
+  padding:var(--s-8) 0;
+}
+
+.next-project__row{
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  gap:var(--s-5);
+  align-items:center;
+}
+
+.next-project__thumb{
+  width:160px;
+  aspect-ratio:4/3;
+  overflow:hidden;
+  background:var(--color-bg-soft);
+}
+
+.next-project__thumb img{
+  width:100%; height:100%; object-fit:cover;
+  transition:transform 600ms ease;
+}
+
+.next-project:hover .next-project__thumb img{transform:scale(1.05)}
+
+.next-project__label{
+  font-size:var(--fs-caption);
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--color-ink-soft);
+  margin-bottom:6px;
+}
+
+.next-project__title{
+  font-family:var(--ff-serif);
+  font-size:clamp(1.5rem, 3vw, 2.25rem);
+  font-weight:300;
+  letter-spacing:-0.01em;
+  transition:color var(--transition);
+}
+
+.next-project:hover .next-project__title{color:var(--color-accent)}
+
+.next-project__arrow{
+  font-family:var(--ff-serif);
+  font-size:2rem;
+  color:var(--color-accent);
+  transition:transform var(--transition);
+}
+
+.next-project:hover .next-project__arrow{transform:translateX(8px)}
+
+@media (max-width:640px){
+  .next-project__row{grid-template-columns:1fr; text-align:left}
+  .next-project__thumb{width:100%; aspect-ratio:16/9}
+  .next-project__arrow{display:none}
+}

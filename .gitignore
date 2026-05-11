@@ -1,0 +1,15 @@
+# Tệp riêng tư / không deploy
+admin.html
+*.pdf
+
+# Ảnh rác chưa dùng
+3f77f2238743bbcd912ccf9beecd86f2.jpg
+a16d114ef14e5dccc64d1a06ddab3acc.jpg
+cd2807fd82e8d964c7e07cc191388034.jpg
+nen.png
+
+# Tạm
+_pdf_preview/
+.DS_Store
+Thumbs.db
+*.log
