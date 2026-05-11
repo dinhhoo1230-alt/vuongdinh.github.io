@@ -1,5 +1,10 @@
 # Tệp riêng tư / không deploy
 admin.html
+admin_server.py
+_rebuild_projects.py
+.claude/
+projects/project-07.html
+VNF Futura - VietDesigner.net/
 *.pdf
 
 # Ảnh rác chưa dùng
