@@ -349,8 +349,24 @@ img{ display:block; width:100%; height:auto }
 .info-block__value p{ margin-bottom:4px }
 
 @media (max-width:768px){
-  .cv{ grid-template-columns:1fr; gap:var(--s-4) }
-  .cv__photo{ max-width:320px; aspect-ratio:1/1 }
+  .cv{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:var(--s-4);
+  }
+  .cv__photo{
+    width:100%;
+    max-width:280px;
+    aspect-ratio:1/1;
+  }
+  .cv__info{
+    width:100%;
+    max-width:380px;
+    align-self:auto;
+    display:block;
+  }
+  .info-block{ margin-bottom:var(--s-3) }
 }
 
 /* ============================================================
