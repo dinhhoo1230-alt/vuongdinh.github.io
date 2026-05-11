@@ -172,11 +172,36 @@ img{ display:block; width:100%; height:auto }
   min-height:100vh;
   padding-top:120px;
   padding-bottom:var(--s-7);
+  position:relative;
 }
 
 .panel.is-active{ display:block }
 
 .page-num{ display:none }
+
+/* Small next-tab arrow — fixed bottom-right, same position on every tab */
+.next-arrow{
+  position:fixed;
+  right:clamp(20px, 4vw, 56px);
+  bottom:clamp(20px, 4vw, 48px);
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:32px;
+  height:32px;
+  color:#B8B8B8;
+  opacity:0.75;
+  transition:opacity var(--transition), transform var(--transition), color var(--transition);
+  z-index:50;
+}
+.next-arrow:hover{
+  opacity:1;
+  color:var(--color-accent);
+  transform:translateX(4px);
+}
+@media (max-width:640px){
+  .next-arrow{ width:28px; height:28px }
+}
 
 /* ============================================================
    Curtain transition (chuyển tab)
@@ -296,8 +321,8 @@ img{ display:block; width:100%; height:auto }
   justify-content:center;
 }
 
-#timeline .container > *,
-#contact .container > *{ width:100% }
+#timeline .container > *:not(.next-arrow),
+#contact .container > *:not(.next-arrow){ width:100% }
 
 .cv{
   display:grid;
