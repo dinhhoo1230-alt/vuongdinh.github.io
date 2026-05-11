@@ -363,8 +363,11 @@ img{ display:block; width:100%; height:auto }
   .cv__info{
     width:100%;
     max-width:280px;
-    align-self:auto;
+    margin:0 auto;
+    align-self:center;
     display:block;
+    flex-direction:initial;
+    justify-content:initial;
   }
   .info-block{ margin-bottom:var(--s-3) }
 }
