@@ -97,4 +97,19 @@
       document.body.style.overflow = open ? 'hidden' : '';
     });
   }
+
+  // Slide transition giữa các trang project detail
+  const detail = document.querySelector('.proj-detail');
+  if (detail) {
+    document.addEventListener('click', (e) => {
+      const a = e.target.closest('.proj-detail a');
+      if (!a) return;
+      const href = a.getAttribute('href');
+      if (!href || /^(https?:|mailto:|tel:|#)/.test(href)) return;
+      if (a.target === '_blank') return;
+      e.preventDefault();
+      detail.classList.add('is-leaving');
+      setTimeout(() => { location.href = href; }, 260);
+    });
+  }
 })();

@@ -625,6 +625,21 @@ img{ display:block; width:100%; height:auto }
 .proj-detail{
   padding-top:120px;
   padding-bottom:var(--s-7);
+  animation: projSlideIn 380ms cubic-bezier(.76,0,.24,1) both;
+}
+@keyframes projSlideIn {
+  from { transform: translateX(40px); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+.proj-detail.is-leaving{
+  animation: projSlideOut 280ms cubic-bezier(.76,0,.24,1) both;
+}
+@keyframes projSlideOut {
+  from { transform: translateX(0);     opacity: 1; }
+  to   { transform: translateX(-40px); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce){
+  .proj-detail, .proj-detail.is-leaving{ animation: none }
 }
 
 .proj-detail__hero{
