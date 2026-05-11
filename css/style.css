@@ -794,6 +794,121 @@ img{ display:block; width:100%; height:auto }
 .back-link:hover{ color:var(--color-accent) }
 
 /* ============================================================
+   GALLERY SECTIONS (Bản vẽ / 3D / Thi công / Thực tế)
+   ============================================================ */
+
+.gallery-section{
+  display:flex;
+  flex-direction:column;
+  gap:var(--s-3);
+}
+
+.gallery-section + .gallery-section{
+  margin-top:var(--s-6);
+}
+
+.gallery-section__label{
+  font-size:var(--fs-md);
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  font-weight:400;
+  color:var(--color-ink);
+  padding-bottom:var(--s-2);
+  margin-bottom:var(--s-2);
+  border-bottom:1px solid var(--color-line);
+}
+
+.gallery-section__label .accent{
+  color:var(--color-accent);
+  margin-right:var(--s-2);
+  font-weight:500;
+}
+
+@media (max-width:640px){
+  .gallery-section + .gallery-section{ margin-top:var(--s-5) }
+  .gallery-section__label{ font-size:var(--fs-small); letter-spacing:0.14em }
+}
+
+/* ============================================================
+   LIGHTBOX (xem ảnh gallery fullscreen)
+   ============================================================ */
+
+.gallery img{ cursor:zoom-in }
+
+.lightbox{
+  position:fixed;
+  inset:0;
+  z-index:200;
+  background:rgba(20,20,20,.94);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity 240ms ease;
+}
+
+.lightbox.is-open{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.lightbox__img{
+  max-width:92vw;
+  max-height:88vh;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  box-shadow:0 12px 60px rgba(0,0,0,.6);
+  user-select:none;
+  -webkit-user-drag:none;
+  transition:opacity 180ms ease;
+}
+
+.lightbox__btn{
+  position:absolute;
+  background:none;
+  border:none;
+  color:#fff;
+  cursor:pointer;
+  padding:12px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  opacity:.7;
+  transition:opacity 200ms ease, color 200ms ease;
+}
+.lightbox__btn:hover{ opacity:1; color:var(--color-accent) }
+
+.lightbox__close{
+  top:clamp(16px, 3vw, 32px);
+  right:clamp(16px, 3vw, 32px);
+}
+
+.lightbox__nav{
+  top:50%;
+  transform:translateY(-50%);
+}
+.lightbox__prev{ left:clamp(8px, 2vw, 24px) }
+.lightbox__next{ right:clamp(8px, 2vw, 24px) }
+
+.lightbox__counter{
+  position:absolute;
+  bottom:clamp(16px, 3vw, 28px);
+  left:50%;
+  transform:translateX(-50%);
+  font-size:var(--fs-tiny);
+  letter-spacing:0.3em;
+  color:rgba(255,255,255,.7);
+  font-variant-numeric:tabular-nums;
+}
+
+@media (max-width:640px){
+  .lightbox__nav{ top:auto; bottom:clamp(40px, 8vw, 60px); transform:none }
+  .lightbox__counter{ bottom:clamp(12px, 2vw, 16px) }
+}
+
+/* ============================================================
    Mobile nav
    ============================================================ */
 
