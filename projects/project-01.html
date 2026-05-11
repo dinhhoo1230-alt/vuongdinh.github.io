@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
@@ -10,8 +10,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="../css/reset.css">
-<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/reset.css?v=6">
+<link rel="stylesheet" href="../css/style.css?v=6">
 
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23fff'/%3E%3Crect x='30' y='30' width='40' height='40' fill='%23ef6c00'/%3E%3C/svg%3E">
 </head>
@@ -19,11 +19,7 @@
 
 <header class="site-header">
   <div class="container">
-    <div class="topbar">
-      <span class="topbar__brand">Portfolio <span class="accent">2026</span></span>
-      <span class="topbar__name">Hồ Tất Vương Đình</span>
-    </div>
-    <nav class="nav">
+    <nav class="nav" id="mainNav">
       <ul class="nav__list">
         <li><a href="../index.html#home" class="nav__link">Trang chủ</a></li>
         <li><a href="../index.html#about" class="nav__link">Giới thiệu</a></li>
@@ -31,6 +27,9 @@
         <li><a href="../index.html#projects" class="nav__link is-active">Dự án</a></li>
         <li><a href="../index.html#contact" class="nav__link">Liên hệ</a></li>
       </ul>
+          <button class="nav__toggle" id="navToggle" aria-label="Mở menu">
+        <span></span><span></span><span></span>
+      </button>
     </nav>
   </div>
 </header>
@@ -80,6 +79,6 @@
   </div>
 </main>
 
-<script src="../js/main.js" defer></script>
+<script src="../js/main.js?v=6" defer></script>
 </body>
 </html>

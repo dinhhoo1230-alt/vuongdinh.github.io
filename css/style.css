@@ -709,13 +709,13 @@ img{ display:block; width:100%; height:auto }
    ============================================================ */
 
 @media (max-width:768px){
-  .nav{ position:relative }
+  .nav{ position:relative; justify-content:flex-end }
   .nav__toggle{ display:flex; position:absolute; right:0; top:50%; transform:translateY(-50%) }
 
   .nav__list{
     position:fixed;
     inset:auto 0 0 0;
-    top:96px;
+    top:54px;
     flex-direction:column;
     align-items:center;
     gap:var(--s-3);
@@ -729,9 +729,24 @@ img{ display:block; width:100%; height:auto }
 
   .nav.is-open .nav__list{ transform:translateY(0) }
 
-  .nav__list .nav__link{ font-size:var(--fs-small) }
+  .nav__list .nav__link{ font-size:var(--fs-small); padding:8px 0 8px 14px }
 
   :root{ --container-pad:24px }
+
+  /* Panel padding nhỏ hơn vì header không còn topbar */
+  .panel{ padding-top:80px }
+  .cover{ min-height:calc(100vh - 80px) }
+  #about .container,
+  #timeline .container,
+  #contact .container{ min-height:calc(100vh - 80px) }
+  .proj-detail{ padding-top:80px }
+
+  /* PORTFOLIO chắc chắn fit trên màn nhỏ */
+  .cover__label{ font-size:clamp(2rem, 13vw, 10rem); white-space:nowrap }
+}
+
+@media (max-width:480px){
+  .cover__label{ font-size:11vw }
 }
 
 /* ============================================================
