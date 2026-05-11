@@ -6,6 +6,7 @@ _rebuild_projects.py
 projects/project-07.html
 VNF Futura - VietDesigner.net/
 *.pdf
+!assets/cv.pdf
 
 # Ảnh rác chưa dùng
 3f77f2238743bbcd912ccf9beecd86f2.jpg
