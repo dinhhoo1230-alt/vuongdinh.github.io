@@ -240,6 +240,14 @@ img{ display:block; width:100%; height:auto }
     linear-gradient(90deg, rgba(0,0,0,.18) 1px, transparent 1px);
   background-size:38px 38px;
   background-position:0 0;
+  animation: caroScroll 1.69s linear infinite;
+}
+@keyframes caroScroll{
+  from { background-position:0 0; }
+  to   { background-position:38px 0; }
+}
+@media (prefers-reduced-motion: reduce){
+  #home{ animation:none }
 }
 
 .cover{

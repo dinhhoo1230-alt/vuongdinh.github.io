@@ -2,6 +2,16 @@
 
 Portfolio kiến trúc tĩnh, tiếng Việt. HTML/CSS/JS thuần — không build tool.
 
+## Workflow chuẩn
+
+Trước mọi đợt sửa, đọc `WORKFLOW.md` — playbook 7 pha (Trinh sát → Khoanh scope → Sửa nhỏ → Test → Dọn → Deploy → Hậu kiểm).
+
+Hai script hỗ trợ tự động:
+- `py check.py` — kiểm tra mojibake, cache version sync, asset 404, orphan </a>, lang/charset. Exit 1 nếu fail.
+- `py deploy.py` — wrapper deploy: chạy check → hiện diff → hỏi message → commit (đúng author) → push → in URL prod.
+
+**Nguyên tắc bất di:** không push nếu `check.py` chưa pass.
+
 ## Stack
 - HTML + CSS + JS thuần. Không bundler.
 - Font: **Jost** (Google Fonts) — Futura-style sans. Cả `index.html` lẫn `projects/project-*.html` phải dùng Jost (KHÔNG được dùng Inter).
@@ -70,7 +80,7 @@ Dùng:
 - PowerShell với `Out-File -Encoding utf8` VÀ `Get-Content -Encoding UTF8` (BỚT cũng dễ sai)
 
 ## Cache busters
-CSS/JS dùng query `?v=N` (hiện tại `v=19`). Bump N khi sửa CSS/JS để force reload. Bump qua Python (regex sub trên `index.html` + tất cả `projects/*.html` + 2 generator script `admin_server.py` & `_rebuild_projects.py`).
+CSS/JS dùng query `?v=N` (hiện tại `v=24`). Bump N khi sửa CSS/JS để force reload. Bump qua Python (regex sub trên `index.html` + tất cả `projects/*.html` + 2 generator script `admin_server.py` & `_rebuild_projects.py`).
 
 `admin.html` được serve với `Cache-Control: no-store` (config trong `admin_server.py` `end_headers`) — không cần bump.
 
@@ -82,6 +92,7 @@ CSS/JS dùng query `?v=N` (hiện tại `v=19`). Bump N khi sửa CSS/JS để f
 - **Keyboard nav**: ← / → chuyển tab SPA (theo `TAB_ORDER`), không wrap. Bị disable khi lightbox đang mở, mobile menu open, hoặc đang gõ trong input/textarea/select. Phải defensive-check `e.target.matches` (target có thể là Document, không có method `.matches()`).
 - **Lazy loading**: ảnh gallery đều có `loading="lazy"`. Cover ảnh ở hero KHÔNG lazy (above-the-fold). Generators trong `admin_server.py` + `_rebuild_projects.py` đều tự thêm.
 - **Sectioned gallery**: project có subfolder `ban-ve/render-3d/thi-cong/thuc-te/` → gallery render thành các `<section class="gallery-section">` có heading + numbering 01/02/... Section rỗng bị skip. Style heading ở `.gallery-section__label` trong `style.css`. Lightbox tự duyệt xuyên sections nhờ chung wrapper `.gallery`. Xem mục "Sectioned gallery mode" ở trên.
+- **Animated caro**: nền lưới caro 38px của `#home` (trang chủ) = 2 `linear-gradient` (nét liền 1px, `rgba(0,0,0,.18)`), trôi liên tục trái→phải qua keyframe `caroScroll` (`background-position` 0→38px, `1.69s linear infinite` ≈ 22.5 px/s). Quãng nhảy PHẢI = bội số 38px (size 1 ô) để vòng lặp liền mạch không khựng — đổi tốc độ thì sửa `duration` (`1.69s`), KHÔNG sửa quãng 38px. Tắt khi `prefers-reduced-motion: reduce`. (Từng thử SVG `stroke-dasharray` cho nét đứt — user thấy không đẹp, đã revert về nét liền.)
 
 ## Layout convention
 - `.proj-detail__hero`: grid `1fr 2fr` — text trái, cover phải.
@@ -110,7 +121,8 @@ CSS/JS dùng query `?v=N` (hiện tại `v=19`). Bump N khi sửa CSS/JS để f
 - `admin_server.py` và `_rebuild_projects.py` cũng là local-only — không cần deploy.
 
 ## Nếu site bị broken sau khi sửa source
-1. Hard refresh (Ctrl+F5) hoặc bump cache `?v=N`.
-2. Nếu tiếng Việt mojibake: regenerate qua `py _rebuild_projects.py`.
-3. Nếu index card duplicate/orphan: edit tay xoá tail, hoặc rerun rebuild script.
-4. Nếu server không trả JSON cho /api/*: kill process Python cũ trên port 8001, restart.
+1. Chạy `py check.py` — báo cáo cụ thể lỗi ở đâu (mojibake / cache lệch / asset 404 / orphan </a>).
+2. Hard refresh (Ctrl+F5) hoặc bump cache `?v=N`.
+3. Nếu tiếng Việt mojibake: regenerate qua `py _rebuild_projects.py`.
+4. Nếu index card duplicate/orphan: edit tay xoá tail, hoặc rerun rebuild script.
+5. Nếu server không trả JSON cho /api/*: kill process Python cũ trên port 8001, restart.
