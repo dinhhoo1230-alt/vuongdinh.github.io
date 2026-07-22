@@ -199,8 +199,10 @@ def check_orphan_anchors() -> None:
     if dup:
         for pid in dup:
             err(f"project-{pid} xuất hiện {counts[pid]}x trong index.html (mong đợi 1)")
-    elif len(counts) != 6:
-        warn(f"Tìm thấy {len(counts)} project card trong index.html (mong đợi 6)")
+    else:
+        n_pages = len(list((ROOT / "projects").glob("project-*.html")))
+        if len(counts) != n_pages:
+            warn(f"Tìm thấy {len(counts)} project card trong index.html (mong đợi {n_pages} theo số trang dự án)")
 
     # Phát hiện cấu trúc </a></a> kế tiếp nhau
     orphan_pattern = re.compile(r"</a>\s*</a>")

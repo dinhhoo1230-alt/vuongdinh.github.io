@@ -109,6 +109,8 @@ CSS/JS dùng query `?v=N` (hiện tại `v=24`). Bump N khi sửa CSS/JS để f
 - `POST /api/save` — endpoint cũ (upload base64). Còn nhưng KHÔNG khuyến khích — UI v2 không dùng.
 
 ## Patch index card — gotcha
+**[Đã vá 2026-07-22]** Regex append giờ có lookahead `(?=\s*<a href="#contact")` nên card mới luôn chèn đúng cuối grid (trước đó card 07 từng bị chèn lọt vào giữa card 01 — đã sửa tay index.html). Cùng ngày: gỡ `projects/project-07.html` khỏi `.gitignore` (dự án 07 giờ là dự án thật, phải deploy); thêm `.nojekyll`; `check.py` đếm số card theo số file `projects/project-*.html` thay vì cứng 6.
+
 `patch_index()` dùng regex non-greedy match `<a ... class="proj-card">...</a>` đầu tiên trùng href. Nếu file đã có orphan tail từ bug cũ thì regex không tự dọn được → tail còn sót, layout vỡ. Cách check: grep `index.html` xem có 2 lần `</a>` cho cùng project-XX không.
 
 ## Git workflow
